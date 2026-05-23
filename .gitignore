@@ -12,6 +12,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# references
+.ref
+
 # environment variables
 .env
 .env.production
