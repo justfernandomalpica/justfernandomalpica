@@ -1,0 +1,26 @@
+// Colors
+$darker: oklch(20% 0% 270deg);
+$dark: oklch(28% 0% 264deg);
+
+$gray: oklch(37% 0% 0deg);
+$gray-light: oklch(45% 0% 0deg);
+$gray-lighten: oklch(55% 0% 0deg);
+
+$light: oklch(91% 0% 0deg);
+$lighten: oklch(96% 0% 0deg);
+
+// Semantic colors
+$border-color: rgba(#fff, 0.3);
+
+// Spacing
+$outer-separation: 2rem;
+$inner-separation: 1rem;
+
+$base-padding: 1.15rem;
+
+// Misc
+$border-radius: 15px;
+
+// Typos
+$base-font: "Commissioner", sans-serif;
+$head-font: "Anton SC", sans-serif;

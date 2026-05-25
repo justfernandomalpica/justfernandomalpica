@@ -1,0 +1,53 @@
+@use "./variables" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Commissioner:wght@100..900&display=swap");
+
+:root {
+  // Color variables
+  --background: #{v.$darker};
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: v.$light;
+
+  font-family: v.$base-font;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: v.$lighten;
+  font-family: v.$head-font;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.1;
+
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+}

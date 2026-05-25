@@ -1,0 +1,25 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<article class=`${className} card` {...rest}>
+  <slot />
+</article>
+
+<style lang="scss">
+  @use "../scss/variables" as v;
+
+  .card {
+    width: 100%;
+    background-color: v.$dark;
+    border-radius: v.$border-radius;
+    overflow: hidden;
+
+    padding: v.$base-padding calc(v.$base-padding * 1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

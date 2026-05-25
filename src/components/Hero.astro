@@ -1,0 +1,97 @@
+---
+import Card from "@/partials/Card.astro";
+---
+
+<section class="hero">
+  <img
+    class="hero__avatar"
+    src="/img/me.webp"
+    alt="Fotorafía tipo avatar de Fernando De Los Santos Malpica"
+  />
+  <Card class="hero__info">
+    <h1>Ing.&nbsp;Fernando De Los Santos Malpica</h1>
+    <p>
+      Electrónica, programación, música y videojuegos. Amo la tecnología en el
+      arte y el arte de la tecnología.
+    </p>
+  </Card>
+
+  <nav class="hero__contact">
+    <Card>Contáctame</Card>
+    <Card>Saber mas</Card>
+  </nav>
+
+  <nav class="hero__links">
+    <Card>Placeholder</Card>
+    <Card>Placeholder</Card>
+    <Card>Placeholder</Card>
+    <Card>Placeholder</Card>
+  </nav>
+</section>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+  @use "@scss/mixins.scss" as m;
+
+  .hero {
+    display: grid;
+    grid-template-columns: 4fr 6fr 4fr;
+    grid-template-rows: fit-content auto;
+    gap: v.$inner-separation;
+
+    grid-template-areas:
+      "avatar info    links"
+      "avatar contact links";
+
+    @include m.desktop-small {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, fit-content) auto;
+      grid-template-areas:
+        "avatar info links"
+        "contact contact links";
+    }
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "avatar info"
+        "contact contact"
+        "links links";
+    }
+
+    @include m.mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__avatar {
+      grid-area: avatar;
+
+      aspect-ratio: 7 / 8;
+      max-width: 300px;
+      margin: auto auto;
+
+      object-fit: cover;
+
+      border-radius: v.$border-radius;
+
+      @include m.tablet {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &__info {
+      grid-area: info;
+    }
+
+    &__contact {
+      grid-area: contact;
+      @include m.container($gap: v.$inner-separation);
+    }
+
+    &__links {
+      grid-area: links;
+      @include m.container($gap: v.$inner-separation);
+    }
+  }
+</style>

@@ -1,0 +1,39 @@
+// Utilities
+@mixin center-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+@mixin container($gap, $card-min-width: 100px) {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr));
+  justify-content: center;
+  gap: $gap;
+}
+
+// Media Queries
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-small {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media screen and (max-width: 1201px) {
+    @content;
+  }
+}
