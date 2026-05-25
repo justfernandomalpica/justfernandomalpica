@@ -14,6 +14,7 @@ pnpm-debug.log*
 
 # references
 .ref
+src/scss/scrap
 
 # environment variables
 .env
