@@ -1,0 +1,116 @@
+---
+import Card from "@/partials/Card.astro";
+
+import ArrowButton from "@/partials/ArrowButton.astro";
+import Pill from "@/partials/Pill.astro";
+---
+
+<section class="about">
+  <Card class="about__whoami">
+    <header>
+      <h2>¿Quién soy?</h2>
+      <ArrowButton link="/about" />
+    </header>
+    <h3>Un poco de todo</h3>
+    <p>
+      Ingeniero en mecatrónica con fascinación por entender las cosas hasta su
+      estado más simple.
+    </p>
+    <p>
+      Actualmente me desenvuelvo como desarrollador web enfocado en backend,
+      principalmente usando <strong>PHP</strong> tratando de mejorar mis habilidades
+      en el frontend.
+    </p>
+  </Card>
+  <Card class="about__whatido">
+    <header>
+      <h2>¿Qué conozco?</h2>
+      <ArrowButton link="/portfolio" />
+    </header>
+    <h3>Lenguajes y Herramientas</h3>
+    <ul>
+      <Pill>PHP</Pill>
+      <Pill>SQL / MySQL</Pill>
+      <Pill>HTML</Pill>
+      <Pill>CSS / SASS</Pill>
+    </ul>
+    <h3>Estudios</h3>
+    <div class="scholarity">
+      <h4>Ingeniería mecatrónica</h4>
+      <p>
+        Egresado |
+        <strong>FIME</strong> |
+        <small>Facultad de Ingeniería Mecánica y Eléctrica</small>
+      </p>
+    </div>
+  </Card>
+</section>
+
+<style lang="scss">
+  @use "@scss/mixins.scss" as m;
+  @use "@scss/variables.scss" as v;
+
+  .about {
+    @include m.container($gap: v.$inner-separation);
+    grid-template-columns: 4fr 5fr;
+
+    @include m.tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__whoami,
+    &__whatido {
+      justify-content: start;
+      align-items: start;
+      gap: calc(v.$inner-separation * 1.2);
+      padding: calc(v.$base-padding * 1.3);
+
+      header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      h2 {
+        font-family: v.$base-font;
+        color: v.$light;
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-size: 1.9rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+      }
+    }
+
+    &__whatido {
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        gap: 8px;
+      }
+
+      .scholarity {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+</style>

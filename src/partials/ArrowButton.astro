@@ -1,0 +1,42 @@
+---
+const { link } = Astro.props;
+---
+
+<a
+  class="arrow-button"
+  href=`${link}`
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M13 7h-6l4 5l-4 5h6l4 -5z"></path>
+  </svg>
+</a>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+
+  a.arrow-button {
+    background-color: v.$gray-light;
+    border: 1px v.$border-color solid;
+    color: v.$lighten;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4px;
+    border-radius: 50%;
+  }
+</style>

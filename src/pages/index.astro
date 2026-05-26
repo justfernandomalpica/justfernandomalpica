@@ -3,12 +3,16 @@ import "@scss/global.scss";
 
 import MainLayout from "@/layouts/MainLayout.astro";
 
+import About from "@components/About.astro";
+import Extras from "@components/Extras.astro";
 import Hero from "@components/Hero.astro";
+import Showcase from "@components/Showcase.astro";
 ---
 
 <MainLayout>
   <main>
     <Hero />
+    <About />
   </main>
 </MainLayout>
 
@@ -19,5 +23,10 @@ import Hero from "@components/Hero.astro";
   main {
     @include m.center-content;
     margin-top: v.$outer-separation;
+    margin-bottom: v.$outer-separation;
+
+    display: flex;
+    flex-direction: column;
+    gap: v.$outer-separation;
   }
 </style>

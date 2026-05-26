@@ -1,0 +1,16 @@
+<span class="pill">
+  <slot />
+</span>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+
+  .pill {
+    background-color: v.$gray;
+    color: v.$light;
+    padding: 5px 10px;
+    border-radius: 30px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+</style>
