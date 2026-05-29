@@ -1,12 +1,17 @@
 ---
 import Card from "./Card.astro";
-const { class: className, href: extLink, ...rest } = Astro.props;
+const {
+  class: className,
+  href: extLink,
+  target: tar = "_blank",
+  ...rest
+} = Astro.props;
 ---
 
 <a
   class="clickable-card-anchor"
   href={extLink}
-  target="_blank"
+  target={tar}
   rel="noopener noreferrer"
 >
   <Card

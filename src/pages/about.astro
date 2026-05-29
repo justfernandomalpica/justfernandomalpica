@@ -1,0 +1,49 @@
+---
+import "@scss/global.scss";
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardClickable from "@/partials/CardClickable.astro";
+
+import { Content as AboutContent } from "@/markdown/about.md";
+import Home from "@/icons/Home.astro";
+---
+
+<MainLayout>
+  <header>
+    <CardClickable class="home-button" href="/" target="_self">
+      <Home class="home-icon" />
+      <p>Inicio</p>
+    </CardClickable>
+  </header>
+  <main class="markdown">
+    <AboutContent />
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  @use "@scss/mixins.scss" as m;
+  @use "@scss/variables.scss" as v;
+
+  header,
+  main {
+    @include m.center-content;
+
+    max-width: 750px;
+    width: 85%;
+  }
+  header {
+    margin-top: v.$outer-separation;
+    .home-button {
+      max-width: fit-content;
+      flex-direction: row;
+      gap: v.$inner-separation;
+    }
+  }
+
+  main {
+    margin-bottom: v.$outer-separation;
+
+    display: flex;
+    flex-direction: column;
+    gap: v.$outer-separation;
+  }
+</style>
