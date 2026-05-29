@@ -3,12 +3,7 @@ import ArrowLeft from "@/icons/ArrowLeft.astro";
 const { link } = Astro.props;
 ---
 
-<a
-  class="arrow-button"
-  href=`${link}`
-  target="_blank"
-  rel="noopener noreferrer"
->
+<a class="arrow-button" href=`${link}` target="_self" rel="noopener noreferrer">
   <ArrowLeft />
 </a>
 
