@@ -1,0 +1,33 @@
+---
+import Card from "./Card.astro";
+const { class: className, href: extLink, ...rest } = Astro.props;
+---
+
+<a
+  class="clickable-card-anchor"
+  href={extLink}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Card
+    class={className ? `${className} clickable-card` : "clickable-card"}
+    {...rest}
+  >
+    <slot />
+  </Card>
+</a>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+  @use "@scss/mixins.scss" as m;
+
+  .clickable-card {
+    height: 100%;
+    @include m.card-hover;
+
+    &-anchor {
+      color: v.$light;
+      text-decoration: none;
+    }
+  }
+</style>

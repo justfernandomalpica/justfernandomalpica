@@ -13,6 +13,25 @@
   gap: $gap;
 }
 
+@mixin pill-container($gap) {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: $gap;
+}
+
+@mixin card-hover {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
 // Media Queries
 @mixin mobile {
   @media screen and (max-width: 480px) {

@@ -1,5 +1,13 @@
 ---
+import Linkedin from "@/icons/Linkedin.astro";
+import Github from "@/icons/Github.astro";
+import Youtube from "@/icons/Youtube.astro";
+import Behance from "@/icons/Behance.astro";
+import Mail from "@/icons/Mail.astro";
+
 import Card from "@/partials/Card.astro";
+import Fiverr from "@/icons/Fiverr.astro";
+import CardClickable from "@/partials/CardClickable.astro";
 ---
 
 <section class="hero">
@@ -17,17 +25,52 @@ import Card from "@/partials/Card.astro";
   </Card>
 
   <nav class="hero__contact">
-    <Card>Contáctame</Card>
-    <Card>Saber mas</Card>
+    <Card id="card-email-sender" class="contact-card">
+      <Mail class="hero__icon" />
+      <p>Contáctame</p>
+    </Card>
+
+    <CardClickable
+      class="contact-card"
+      href="https://www.linkedin.com/in/fernando-de-los-santos-malpica"
+    >
+      <Linkedin class="hero__icon" />
+      <p>Saber mas</p>
+    </CardClickable>
   </nav>
 
   <nav class="hero__links">
-    <Card>Placeholder</Card>
-    <Card>Placeholder</Card>
-    <Card>Placeholder</Card>
-    <Card>Placeholder</Card>
+    <CardClickable href="https://www.github.com/justfernandomalpica">
+      <Github class="hero__icon" />
+      <p>GitHub</p>
+    </CardClickable>
+
+    <CardClickable href="https://www.youtube.com/@justfernandomalpica">
+      <Youtube class="hero__icon" />
+      <p>Youtube</p>
+    </CardClickable>
+
+    <CardClickable href="https://www.behance.net/justfernandomalpica">
+      <Behance class="hero__icon" />
+      <p>Behance</p>
+    </CardClickable>
+
+    <CardClickable href="https://www.fiverr.com/jfmalpica">
+      <Fiverr class="hero__icon" />
+      <p>Fiverr</p>
+    </CardClickable>
   </nav>
 </section>
+
+<script>
+  const button = document.querySelector("#card-email-sender");
+
+  if (button) {
+    button.addEventListener("click", (e) => {
+      window.location.href = "mailto:fernando_santosmalpica@outlook.com";
+    });
+  }
+</script>
 
 <style lang="scss">
   @use "@scss/variables.scss" as v;
@@ -64,6 +107,10 @@ import Card from "@/partials/Card.astro";
       flex-direction: column;
     }
 
+    &__icon {
+      color: v.$lighten;
+    }
+
     &__avatar {
       grid-area: avatar;
 
@@ -82,16 +129,37 @@ import Card from "@/partials/Card.astro";
 
     &__info {
       grid-area: info;
+      gap: 15px;
+      h1 {
+        font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+      }
     }
 
     &__contact {
       grid-area: contact;
       @include m.container($gap: v.$inner-separation);
+
+      .contact-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #card-email-sender {
+        @include m.card-hover;
+        cursor: pointer;
+      }
     }
 
     &__links {
       grid-area: links;
       @include m.container($gap: v.$inner-separation);
+
+      .hero__icon {
+        margin-bottom: 5px;
+      }
     }
   }
 </style>

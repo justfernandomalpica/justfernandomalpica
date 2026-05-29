@@ -1,0 +1,185 @@
+---
+import ArrowDown from "@/icons/ArrowDown.astro";
+import Card from "@/partials/Card.astro";
+
+type Experience = {
+  empresa: string;
+  puesto: string;
+  area: string;
+  fechaInicio: string;
+  fechaFin: string;
+  periodo: string;
+  descripcion: string;
+  responsabilidades: string[];
+  logros: string[];
+};
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<Card class="experience-card">
+  <button class="experience-card__expander"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.25"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M17 13v-6l-5 4l-5 -4v6l5 4z"></path>
+    </svg>
+  </button>
+  <div class="experience-card__preview">
+    <h3>{experience.puesto}</h3>
+    <h4>{experience.empresa}</h4>
+    <p>{experience.periodo}</p>
+  </div>
+  <div class="experience-card__content">
+    <div class="experience-card__content-inner">
+      {
+        experience.descripcion && (
+          <>
+            <h4>Descripción</h4>
+            <p>{experience.descripcion}</p>
+          </>
+        )
+      }
+      <h4>Responsabilidades</h4>
+      <ul>
+        {experience.responsabilidades.map((res) => <li>{res}</li>)}
+      </ul>
+      <h4>Logros obtenidos</h4>
+      <ul>
+        {experience.logros.map((logro) => <li>{logro}</li>)}
+      </ul>
+    </div>
+  </div>
+</Card>
+
+<script>
+  const cards = document.querySelectorAll(".experience-card");
+
+  cards.forEach((card) => {
+    const button = card.querySelector<HTMLButtonElement>(
+      ".experience-card__expander",
+    );
+
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      card.classList.toggle("is-open");
+    });
+  });
+</script>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+
+  .experience-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: v.$outer-separation;
+
+    padding-left: unset;
+
+    max-width: 700px;
+
+    transition: grid-template-rows 300ms ease;
+
+    &__expander {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      background-color: unset;
+      border: unset;
+      color: v.$lighten;
+      cursor: pointer;
+
+      width: 200%;
+      height: 100%;
+
+      svg {
+        transition: transform 300ms ease;
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.4);
+        }
+      }
+    }
+
+    &__preview {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      padding-left: 15px;
+      border-left: 1px v.$border-color solid;
+
+      h3 {
+        font-size: 1.4rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        color: v.$light;
+      }
+
+      p {
+        font-style: italic;
+      }
+    }
+
+    &__content {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      display: grid;
+      grid-template-rows: 0fr;
+
+      padding-left: 15px;
+
+      transition:
+        grid-template-rows 300ms ease,
+        margin-top 300ms ease;
+
+      &-inner {
+        overflow: hidden;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+
+    &.is-open {
+      .experience-card__expander svg {
+        transform: rotate(-180deg) scale(1.4);
+      }
+      .experience-card__content {
+        margin-top: 15px;
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+</style>

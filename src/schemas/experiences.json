@@ -1,0 +1,74 @@
+[
+  {
+    "empresa": "Grupo Estrella",
+    "puesto": "Sistemas, soporte e infraestructura",
+    "area": "Sistemas, soporte e infraestructura",
+    "fechaInicio": "Mayo 2024",
+    "fechaFin": "Enero 2026",
+    "periodo": "Mayo 2024 – Enero 2026",
+    "descripcion": "Progresión profesional dentro del área técnica, comenzando en reparación electrónica y posteriormente asumiendo un rol de liderazgo en soporte, sistemas, infraestructura y coordinación de proyectos tecnológicos para sucursales de lavandería de autoservicio y empresas relacionadas.",
+    "responsabilidades": [
+      "Soporte técnico a usuarios y sucursales de lavandería de autoservicio.",
+      "Diagnóstico y resolución de problemas relacionados con equipos, redes, CCTV, sensores, sistemas de control de acceso y conexiones remotas.",
+      "Instalación y mantenimiento de sistemas CCTV, control de acceso, alarmas, cableado estructurado e infraestructura básica de redes y servidores.",
+      "Reparación de tarjetas electrónicas de equipos de lavado y secado.",
+      "Coordinación de actividades técnicas, seguimiento a proyectos de infraestructura y propuesta de soluciones para necesidades operativas."
+    ],
+    "logros": [
+      "Soporte técnico a 38 sucursales de lavandería de autoservicio.",
+      "Participación y coordinación en la implementación de infraestructura tecnológica para la apertura de una nueva sucursal en menos de 3 meses.",
+      "Reparación exitosa de más de 60 tarjetas electrónicas y recuperación de más de 20 tarjetas previamente consideradas como desecho.",
+      "Corrección de fallas recurrentes causadas por malas instalaciones y falta de mantenimiento."
+    ]
+  },
+  {
+    "empresa": "FIME 3D Project",
+    "puesto": "Asistente administrativo / Instructor técnico",
+    "area": "Asistencia administrativa e instrucción técnica",
+    "fechaInicio": "Agosto 2023",
+    "fechaFin": "Abril 2024",
+    "periodo": "Agosto 2023 – Abril 2024",
+    "descripcion": "",
+    "responsabilidades": [
+      "Capacitación a estudiantes en Blender y herramientas multimedia.",
+      "Modelado y texturizado de recursos 3D.",
+      "Coordinación de pequeños equipos de trabajo.",
+      "Participación en proyectos internos y externos de la UANL."
+    ],
+    "logros": [
+      "Modelado y texturizado de más de 100 recursos para imágenes promocionales, recorridos virtuales y experiencias interactivas."
+    ]
+  },
+  {
+    "empresa": "Repárame Servicio Apple",
+    "puesto": "Técnico en reparación",
+    "area": "Reparación técnica",
+    "fechaInicio": "Enero 2023",
+    "fechaFin": "Mayo 2023",
+    "periodo": "Enero 2023 – Mayo 2023",
+    "descripcion": "",
+    "responsabilidades": [
+      "Diagnóstico y reparación de dispositivos Apple y equipo de cómputo.",
+      "Reparaciones a nivel componente.",
+      "Atención al cliente y seguimiento de casos.",
+      "Control básico de inventario."
+    ],
+    "logros": [
+      "Reparación exitosa de más de 25 dispositivos, manteniendo los casos de garantía por debajo del 10%."
+    ]
+  },
+  {
+    "empresa": "Teleperformance – Comcast Business",
+    "puesto": "Agente bilingüe de soporte",
+    "area": "Soporte bilingüe",
+    "fechaInicio": "Agosto 2022",
+    "fechaFin": "Diciembre 2022",
+    "periodo": "Agosto 2022 – Diciembre 2022",
+    "descripcion": "",
+    "responsabilidades": [
+      "Soporte remoto en inglés para pequeñas y medianas empresas.",
+      "Atención de incidentes relacionados con servicios de internet, teléfono, televisión y facturación."
+    ],
+    "logros": ["Atención y resolución de incidentes para más de 500 clientes."]
+  }
+]

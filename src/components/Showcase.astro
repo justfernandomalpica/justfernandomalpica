@@ -1,0 +1,104 @@
+---
+import ArrowLeft from "@/icons/ArrowLeft.astro";
+
+import projects from "@/schemas/projects.json";
+import experiences from "@/schemas/experiences.json";
+
+import ProjectCard from "./ProjectCard.astro";
+import ExperienceCard from "./ExperienceCard.astro";
+import Card from "@/partials/Card.astro";
+---
+
+<section class="showcase">
+  <h2>Proyectos</h2>
+  <div class="showcase__projects">
+    {
+      projects.map((project) => {
+        if (project.featured)
+          return (
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <ProjectCard project={project} />
+            </a>
+          );
+      })
+    }
+    <a class="show-more-projects" href="/projects">
+      <Card> Ver mas proyectos </Card>
+    </a>
+  </div>
+
+  <h2>Experiencia laboral reciente</h2>
+  <div class="showcase__experience">
+    {
+      experiences.map((experience) => (
+        <ExperienceCard experience={experience} />
+      ))
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+  @use "@scss/mixins.scss" as m;
+
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    gap: v.$outer-separation;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 3rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: v.$lighten;
+      display: flex;
+      width: fit-content;
+
+      margin: 0 auto;
+    }
+
+    &__instructions {
+      text-align: center;
+      font-style: italic;
+    }
+
+    &__projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: v.$inner-separation;
+
+      @include m.tablet {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include m.mobile {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .show-more-projects {
+        grid-column: 3 / 4;
+        width: 100%;
+
+        @include m.tablet {
+          grid-column: unset;
+        }
+
+        @include m.card-hover;
+      }
+    }
+
+    &__experience {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: v.$inner-separation;
+
+      margin: 0 auto;
+    }
+  }
+</style>

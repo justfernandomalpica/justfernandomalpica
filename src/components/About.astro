@@ -7,6 +7,10 @@ import Pill from "@/partials/Pill.astro";
 
 <section class="about">
   <Card class="about__whoami">
+    <video class="video-background" autoplay muted loop playsinline>
+      <source src="/vid/bg-video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
     <header>
       <h2>¿Quién soy?</h2>
       <ArrowButton link="/about" />
@@ -21,27 +25,47 @@ import Pill from "@/partials/Pill.astro";
       principalmente usando <strong>PHP</strong> tratando de mejorar mis habilidades
       en el frontend.
     </p>
+    <p>
+      He sido parte de diversos grupos de trabajo en diferentes campos de la
+      tecnología y el arte, como equipos de soporte técnico y administración de
+      sistemas, equipos de diseño y modelado 3D así como de desarrollo
+      mecatrónico para la elaboración de diversos sistemas embebidos, de control
+      y programación.
+    </p>
   </Card>
   <Card class="about__whatido">
     <header>
       <h2>¿Qué conozco?</h2>
-      <ArrowButton link="/portfolio" />
+      <ArrowButton link="/cv" />
     </header>
     <h3>Lenguajes y Herramientas</h3>
     <ul>
-      <Pill>PHP</Pill>
-      <Pill>SQL / MySQL</Pill>
-      <Pill>HTML</Pill>
-      <Pill>CSS / SASS</Pill>
+      <li><Pill>PHP</Pill></li>
+      <li><Pill>SQL / MySQL</Pill></li>
+      <li><Pill>HTML</Pill></li>
+      <li><Pill>CSS / SASS</Pill></li>
+      <li><Pill>JavaScript</Pill></li>
+      <li><Pill>Git / GitHub</Pill></li>
+      <li><Pill>SSH</Pill></li>
+      <li><Pill>Blender 3D</Pill></li>
+      <li><Pill>Cinema 4D</Pill></li>
+      <li><Pill>ZBrush</Pill></li>
+      <li><Pill>Filmora</Pill></li>
+      <li><Pill>FL Studio</Pill></li>
     </ul>
     <h3>Estudios</h3>
     <div class="scholarity">
       <h4>Ingeniería mecatrónica</h4>
       <p>
         Egresado |
-        <strong>FIME</strong> |
+        <strong>FIME</strong> :
         <small>Facultad de Ingeniería Mecánica y Eléctrica</small>
       </p>
+    </div>
+    <div>
+      <h4>Idiomas</h4>
+      <p>Español | Nativo</p>
+      <p>Inglés | B1</p>
     </div>
   </Card>
 </section>
@@ -53,6 +77,10 @@ import Pill from "@/partials/Pill.astro";
   .about {
     @include m.container($gap: v.$inner-separation);
     grid-template-columns: 4fr 5fr;
+
+    @include m.desktop-small {
+      grid-template-columns: 1fr 1fr;
+    }
 
     @include m.tablet {
       display: flex;
@@ -82,7 +110,7 @@ import Pill from "@/partials/Pill.astro";
       }
 
       h3 {
-        font-size: 1.9rem;
+        font-size: 2.3rem;
         width: 100%;
         text-align: center;
         margin-bottom: 0;
@@ -94,16 +122,44 @@ import Pill from "@/partials/Pill.astro";
       }
     }
 
+    &__whoami {
+      position: relative;
+
+      *,
+      ** {
+        position: relative;
+        z-index: 2;
+      }
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      .video {
+        &-background {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        &-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.65);
+          z-index: 1;
+          pointer-events: none;
+          backdrop-filter: blur(10px);
+        }
+      }
+    }
+
     &__whatido {
       ul {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-
-        gap: 8px;
+        @include m.pill-container(8px);
       }
 
       .scholarity {

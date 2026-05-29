@@ -1,0 +1,29 @@
+[
+  {
+    "title": "FiaDOX",
+    "link": "https://www.github.com/justfernandomalpica/fiadox",
+    "category": "Desarrollo web",
+    "description": "Sistema web para administración de fiados, clientes y transacciones para pequeños comercios.",
+    "thumbnail": "fiadox_thumb.webp",
+    "tags": ["PHP", "MySQL", "JavaScript", "Git", "Postman"],
+    "featured": true
+  },
+  {
+    "title": "Teclado mecánico",
+    "link": "https://www.behance.net/gallery/104192543/3D-Keyboard-Modeling",
+    "category": "Modelado 3D",
+    "description": "Diseño de teclado minimalista. Renderizado enfocado en la muestra del producto.",
+    "thumbnail": "keyboard.webp",
+    "tags": ["Blender", "Cycles Render", "Photoshop"],
+    "featured": true
+  },
+  {
+    "title": "Inteligencias y escaleras",
+    "link": "https://justfernandomalpica.itch.io/inteligencias-y-escaleras",
+    "category": "Desarrollo de videojuegos",
+    "description": "Videojuego educativo que combina trivia y el clásico juego de mesa 'Serpientes y Escaleras'",
+    "thumbnail": "inteligencias-y-escaleras.webp",
+    "tags": ["Unity", "C#", "Photoshop", "FL Studio"],
+    "featured": true
+  }
+]

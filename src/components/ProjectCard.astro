@@ -1,0 +1,89 @@
+---
+import Card from "@/partials/Card.astro";
+import Pill from "@/partials/Pill.astro";
+
+type Project = {
+  title: string;
+  link: string;
+  category: string;
+  description: string;
+  thumbnail: string;
+  tags: string[];
+};
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<Card class="project-card">
+  <img
+    src=`/img/projects/${project.thumbnail}`
+    alt=`Imagen representativa del proyecto '${project.title}'`
+  />
+  <div class="project-card__info">
+    <h3>{project.title}</h3>
+    <p class="category">{project.category}</p>
+    <p>{project.description}</p>
+    <ul>
+      {
+        project.tags.map((tag) => (
+          <li>
+            <Pill class="tag">{tag}</Pill>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Card>
+
+<style lang="scss">
+  @use "@scss/mixins.scss" as m;
+  @use "@scss/variables.scss" as v;
+
+  .project-card {
+    padding: 0;
+    justify-content: start;
+
+    @include m.card-hover;
+
+    img {
+      background-color: v.$lighten;
+      aspect-ratio: 5 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__info {
+      width: 100%;
+      height: 100%;
+      padding: 17.5px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      h3 {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+
+      .category {
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        li span.tag {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+</style>
