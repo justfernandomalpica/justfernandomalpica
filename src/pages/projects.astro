@@ -1,0 +1,71 @@
+---
+import "@scss/global.scss";
+import MainLayout from "@/layouts/MainLayout.astro";
+
+import projects from "@/schemas/projects.json";
+import ProjectCard from "@/components/ProjectCard.astro";
+import CardClickable from "@/partials/CardClickable.astro";
+import Home from "@/icons/Home.astro";
+---
+
+<MainLayout>
+  <header>
+    <div class="header-container">
+      <CardClickable class="home-button" href="/" target="_self">
+        <Home class="home-icon" />
+        <p>Inicio</p>
+      </CardClickable>
+    </div>
+  </header>
+  <main>
+    <h1>Proyectos</h1>
+    <p>
+      A continuación presento un compilado de diversos proyectos en los cuales
+      he tenido el placer de trabajar.
+    </p>
+    <div class="project-cards-container">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  @use "@scss/mixins.scss" as m;
+  @use "@scss/variables.scss" as v;
+
+  header,
+  main {
+    @include m.center-content;
+    margin-top: v.$outer-separation;
+  }
+
+  header {
+    .header-container {
+      width: fit-content;
+    }
+    .home-button {
+      width: fit-content;
+      flex-direction: row;
+      gap: v.$inner-separation;
+    }
+  }
+
+  main {
+    margin-bottom: v.$outer-separation;
+    display: flex;
+    flex-direction: column;
+    gap: v.$outer-separation;
+
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    .project-cards-container {
+      @include m.container($gap: v.$inner-separation, $card-min-width: 300px);
+
+      a {
+      }
+    }
+  }
+</style>

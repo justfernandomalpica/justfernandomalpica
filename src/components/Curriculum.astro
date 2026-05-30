@@ -1,0 +1,245 @@
+---
+import Home from "@/icons/Home.astro";
+import Briefcase from "@/icons/Briefcase.astro";
+import File from "@/icons/File.astro";
+
+import CardClickable from "@/partials/CardClickable.astro";
+import type { CVData } from "@/types/cv";
+import Pill from "@/partials/Pill.astro";
+
+interface Props {
+  cvData: CVData;
+  lang: "es" | "en";
+}
+
+const { cvData, lang } = Astro.props;
+const { info, profile, education, experience } = cvData;
+---
+
+<header>
+  <div class="card-container">
+    <CardClickable class="navegation-card home-button" href="/" target="_self">
+      <Home />
+      {lang == "es" ? "Inicio" : "Home"}
+    </CardClickable>
+
+    <CardClickable class="navegation-card" href="/projects" target="_self">
+      <Briefcase />
+      {lang == "es" ? "Proyectos" : "Projects"}
+    </CardClickable>
+  </div>
+
+  <div class="card-container">
+    <CardClickable
+      class="navegation-card"
+      href=`/doc/FDLSM_${lang}.pdf`
+      download
+    >
+      <File />
+      <p>{lang == "es" ? "Descargar" : "Download"}</p>
+    </CardClickable>
+    <CardClickable
+      class="navegation-card"
+      href={lang == "es" ? "/cv/en" : "/cv"}
+      target="_self"
+    >
+      {lang == "es" ? <p>&#x1f1fa;&#x1f1f8;</p> : <p>&#x1f1f2;&#x1f1fd;</p>}
+    </CardClickable>
+  </div>
+</header>
+
+<main class="curriculum-main-content">
+  <section>
+    <h1>{info.title}</h1>
+    <p>{info.birthDate}</p>
+    <p>{info.address}</p>
+    <p><strong>{lang == "es" ? "Idiomas" : "Languages"}:</strong></p>
+    {info.languages.map((language) => <p>{language}</p>)}
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>{lang == "es" ? "Perfil" : "Profile"}</h2>
+    <p>{profile}</p>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>{lang == "es" ? "Habilidades Técnicas" : "Technical skills"}</h2>
+    {
+      Object.entries(cvData.skills).map(([category, items]) => (
+        <>
+          <h3>{category}</h3>
+          <ul class="pill-container">
+            {items.map((skill) => (
+              <li>
+                <Pill class="skill-pill">{skill}</Pill>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))
+    }
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>
+      {lang == "es" ? "Experiencia profesional" : "Professional experience"}
+    </h2>
+    {
+      experience.map(
+        ({
+          company,
+          position,
+          period,
+          description,
+          responsibilities,
+          achievements,
+        }) => (
+          <>
+            <h3>
+              {company} | {position} | {period}
+            </h3>
+            <div class="experience-content">
+              {description && <p>{description}</p>}
+              <h4>
+                {lang == "es" ? "Responsabilidades" : "Main Responsibilities"}
+              </h4>
+              <ul>
+                {responsibilities.map((responsibility) => (
+                  <li>{responsibility}</li>
+                ))}
+              </ul>
+              <h4>{lang == "es" ? "Logros alcanzados" : "Key achievements"}</h4>
+              <p>{achievements}</p>
+            </div>
+          </>
+        ),
+      )
+    }
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>{lang == "es" ? "Educación" : "Education"}</h2>
+    {
+      education.map((step) => (
+        <>
+          <h3>{step.university}</h3>
+          <h4>{step.faculty}</h4>
+          <p>
+            <strong>{step.title}</strong> | {step.period}
+          </p>
+          <p>{step.description}</p>
+        </>
+      ))
+    }
+  </section>
+</main>
+
+<style lang="scss">
+  @use "@scss/mixins.scss" as m;
+  @use "@scss/variables.scss" as v;
+
+  main,
+  header {
+    @include m.center-content;
+
+    max-width: 750px;
+    width: 85%;
+
+    margin-top: v.$outer-separation;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    gap: v.$outer-separation;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      gap: v.$inner-separation;
+
+      @include m.tablet {
+        width: 100%;
+        justify-content: end;
+        flex-wrap: wrap;
+      }
+
+      .navegation-card {
+        max-width: fit-content;
+        flex-direction: row;
+        gap: v.$inner-separation;
+      }
+    }
+  }
+  main.curriculum-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: v.$inner-separation;
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 2rem;
+      margin-bottom: 15px;
+      list-style: disc;
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      &.pill-container {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        @include m.mobile {
+          padding-left: 0;
+        }
+
+        .skill-pill {
+          color: v.$lighten;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .experience-content {
+      padding-left: 2.7rem;
+      @include m.mobile {
+        padding-left: 1rem;
+      }
+      margin-bottom: 25px;
+    }
+  }
+</style>

@@ -1,0 +1,123 @@
+{
+  "info": {
+    "title": "Ing. Fernando De Los Santos Malpica",
+    "birthDate": "28 de diciembre de 2001",
+    "phone": "+52 812 392 63 75",
+    "email": "fernando_santosmalpica@outlook.com",
+    "address": "Mitras Poniente, García, Nuevo León",
+    "languages": [
+      "Español - Nativo",
+      "Inglés - B1 (lectura técnica y comunicación escrita)"
+    ]
+  },
+  "profile": "Ingeniero Mecatrónico con experiencia práctica en electrónica, soporte técnico, infraestructura y sistemas de seguridad física. Con facilidad para trabajar en entornos de hardware, redes y operaciones, desde el diagnóstico de fallas en equipos hasta la coordinación de proyectos tecnológicos en contextos empresariales reales. Actualmente en expansión hacia el desarrollo web de forma autodidacta, aplicando el mismo enfoque práctico a la construcción de sistemas backend funcionales y soluciones personalizadas.",
+  "skills": {
+    "Desarrollo Backend & Web": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Sass/SCSS",
+      "Renderizado del lado del servidor",
+      "APIs REST",
+      "Operaciones CRUD",
+      "Manejo de formularios y validación de entradas",
+      "Autenticación y manejo de sesiones",
+      "Respuestas JSON"
+    ],
+    "Arquitectura de Software": [
+      "Programación Orientada a Objetos",
+      "Arquitectura MVC",
+      "Enrutamiento personalizado",
+      "Patrón Active Record",
+      "Separación de responsabilidades",
+      "Estructura modular de proyectos",
+      "Diseño de bases de datos relacionales"
+    ],
+    "Herramientas & Flujo de Trabajo": [
+      "Git",
+      "GitHub",
+      "Composer",
+      "NPM",
+      "VS Code",
+      "PuTTY",
+      "TablePlus",
+      "Postman",
+      "Variables de entorno"
+    ],
+    "Infraestructura & Sistemas Físicos": [
+      "Soporte técnico",
+      "Diagnóstico de redes",
+      "Conexiones remotas",
+      "Bases de servidores Linux",
+      "Despliegue en hosting web",
+      "Instalación y mantenimiento de CCTV",
+      "Sistemas de control de acceso y alarmas",
+      "Cableado estructurado",
+      "Diagnóstico de hardware y electrónica"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Grupo Estrella",
+      "position": "Sistemas, Soporte e Infraestructura",
+      "period": "Mayo 2024 - Enero 2026",
+      "description": "Progresión dentro del área técnica de una cadena de lavanderías de autoservicio, comenzando en reparación electrónica y evolucionando hacia un rol de liderazgo en soporte, sistemas, infraestructura y coordinación de proyectos tecnológicos en sucursales y empresas relacionadas.",
+      "responsibilities": [
+        "Brindé soporte técnico a usuarios y sucursales de lavandería de autoservicio.",
+        "Diagnostiqué y resolví problemas relacionados con equipos, redes, CCTV, sensores, sistemas de control de acceso y conexiones remotas.",
+        "Instalé y mantuve sistemas de CCTV, control de acceso, alarmas, cableado estructurado e infraestructura básica de red y servidores.",
+        "Reparé tarjetas electrónicas de equipos de lavado y secado.",
+        "Coordiné actividades técnicas, di seguimiento a proyectos de infraestructura y propuse soluciones a necesidades operativas."
+      ],
+      "achievements": "Brindé soporte a 38 sucursales de lavandería de autoservicio. Coordiné la infraestructura tecnológica para la apertura de una nueva sucursal en menos de 3 meses. Reparé más de 60 tarjetas electrónicas y recuperé más de 20 consideradas chatarra. Identifiqué y corregí fallas recurrentes causadas por malas instalaciones y falta de mantenimiento."
+    },
+    {
+      "company": "Proyecto 3D FIME",
+      "position": "Asistente Administrativo / Instructor Técnico",
+      "period": "Agosto 2023 - Abril 2024",
+      "description": "Iniciativa universitaria en FIME (UANL) enfocada en modelado 3D, experiencias virtuales y producción multimedia para proyectos institucionales y externos.",
+      "responsibilities": [
+        "Capacité a estudiantes en Blender y herramientas multimedia.",
+        "Modelé y texturicé assets 3D.",
+        "Coordiné equipos de trabajo pequeños.",
+        "Participé en proyectos internos y externos de la UANL."
+      ],
+      "achievements": "Modelé y texturicé más de 100 assets utilizados en imágenes promocionales, recorridos virtuales y experiencias interactivas."
+    },
+    {
+      "company": "Repárame Servicio Apple",
+      "position": "Técnico en Reparación",
+      "period": "Enero 2023 - Mayo 2023",
+      "description": "",
+      "responsibilities": [
+        "Diagnostiqué y reparé dispositivos Apple y equipo de cómputo.",
+        "Realicé reparaciones a nivel de componentes.",
+        "Brindé atención al cliente y seguimiento de casos.",
+        "Gestioné control básico de inventario."
+      ],
+      "achievements": "Reparé más de 25 dispositivos manteniendo las devoluciones por garantía por debajo del 10%."
+    },
+    {
+      "company": "Teleperformance - Comcast Business",
+      "position": "Agente de Soporte Bilingüe",
+      "period": "Agosto 2022 - Diciembre 2022",
+      "description": "",
+      "responsibilities": [
+        "Brindé soporte remoto en inglés a pequeñas y medianas empresas.",
+        "Atendí incidencias relacionadas con servicios de internet, telefonía, televisión y facturación."
+      ],
+      "achievements": "Resolví incidencias para más de 500 clientes."
+    }
+  ],
+  "education": [
+    {
+      "university": "UANL | Universidad Autónoma de Nuevo León",
+      "faculty": "FIME | Facultad de Ingeniería Mecánica y Eléctrica",
+      "title": "Ingeniería Mecatrónica",
+      "period": "Agosto 2019 - Diciembre 2024",
+      "description": "Egresado. Estudios concluidos. Titulación en proceso."
+    }
+  ]
+}

@@ -7,20 +7,18 @@ import experiences from "@/schemas/experiences.json";
 import ProjectCard from "./ProjectCard.astro";
 import ExperienceCard from "./ExperienceCard.astro";
 import Card from "@/partials/Card.astro";
+import CardClickable from "@/partials/CardClickable.astro";
 ---
 
 <section class="showcase">
   <h2>Proyectos</h2>
   <div class="showcase__projects">
     {
-      projects.map((project) => {
-        if (project.featured)
-          return (
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <ProjectCard project={project} />
-            </a>
-          );
-      })
+      projects
+        .filter((prj) => prj.featured)
+        .map((project) => {
+          if (project.featured) return <ProjectCard project={project} />;
+        })
     }
     <a class="show-more-projects" href="/projects">
       <Card> Ver mas proyectos </Card>
@@ -34,6 +32,9 @@ import Card from "@/partials/Card.astro";
         <ExperienceCard experience={experience} />
       ))
     }
+    <CardClickable class="show-cv" href="/cv" target="_self">
+      Ver Curriculum
+    </CardClickable>
   </div>
 </section>
 
@@ -99,6 +100,11 @@ import Card from "@/partials/Card.astro";
       gap: v.$inner-separation;
 
       margin: 0 auto;
+    }
+
+    .show-more-projects,
+    .show-cv {
+      font-size: 1.3rem;
     }
   }
 </style>

@@ -1,0 +1,123 @@
+{
+  "info": {
+    "title": "Eng. Fernando De Los Santos Malpica",
+    "birthDate": "December 28th, 2001",
+    "phone": "+528123926375",
+    "email": "fernando_santosmalpica@outlook.com",
+    "address": "Mitras Poniente, García. Nuevo León",
+    "languages": [
+      "Español - Nativo",
+      "English - B1 (technical reading and written communication)"
+    ]
+  },
+  "profile": "Mechatronics Engineer with hands-on experience in electronics, technical support, infrastructure, and physical security systems. Comfortable working across hardware, networks, and operational environments - from diagnosing equipment failures to coordinating technology projects in real business contexts. Currently expanding into web development independently, applying the same practical mindset to building functional backend systems and custom solutions.",
+  "skills": {
+    "Backend & Web Development": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Sass/SCSS",
+      "Server-side rendering",
+      "REST APIs",
+      "CRUD operations",
+      "Form handling & input validation",
+      "Authentication & session management",
+      "JSON responses"
+    ],
+    "Software Architecture": [
+      "Object-Oriented Programming",
+      "MVC architecture",
+      "Custom routing",
+      "Active Record pattern",
+      "Separation of concerns",
+      "Modular project structure",
+      "Relational database design"
+    ],
+    "Tools & Workflow": [
+      "Git",
+      "GitHub",
+      "Composer",
+      "NPM",
+      "VS Code",
+      "PuTTY",
+      "TablePlus",
+      "Postman",
+      "Environment variables"
+    ],
+    "Infrastructure & Physical Systems": [
+      "Technical support",
+      "Network troubleshooting",
+      "Remote connections",
+      "Linux server basics",
+      "Web hosting deployment",
+      "CCTV installation & maintenance",
+      "Access control & alarm systems",
+      "Structured cabling",
+      "Hardware & electronics troubleshooting"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Grupo Estrella",
+      "position": "Systems, Support & Infrastructure",
+      "period": "May 2024 - January 2026",
+      "description": "Career progression within the technical area of a self-service laundry chain, starting in electronic repair and evolving into a leadership role covering support, systems, infrastructure, and technology project coordination across branches and related companies.",
+      "responsibilities": [
+        "Provided technical support for users and self-service laundry branches.",
+        "Diagnosed and resolved issues involving equipment, networks, CCTV, sensors, access control systems, and remote connections.",
+        "Installed and maintained CCTV systems, access control, alarms, structured cabling, and basic network/server infrastructure.",
+        "Repaired electronic boards for washing and drying equipment.",
+        "Coordinated technical activities, followed up on infrastructure projects, and proposed solutions for operational needs."
+      ],
+      "achievements": "Supported 38 self-service laundry branches. Coordinated technology infrastructure for the opening of a new branch in under 3 months. Repaired over 60 electronic boards and recovered more than 20 previously considered scrap. Identified and corrected recurring failures caused by poor installations and lack of maintenance."
+    },
+    {
+      "company": "FIME 3D Project",
+      "position": "Administrative Assistant / Technical Instructor",
+      "period": "August 2023 - April 2024",
+      "description": "University-based initiative at FIME (UANL) focused on 3D modeling, virtual experiences, and multimedia production for institutional and external projects.",
+      "responsibilities": [
+        "Trained students in Blender and multimedia tools.",
+        "Modeled and textured 3D assets.",
+        "Coordinated small work teams.",
+        "Participated in internal and external UANL projects."
+      ],
+      "achievements": "Modeled and textured over 100 assets used in promotional images, virtual tours, and interactive experiences."
+    },
+    {
+      "company": "Repárame Servicio Apple",
+      "position": "Repair Technician",
+      "period": "January 2023 - May 2023",
+      "description": "",
+      "responsibilities": [
+        "Diagnosed and repaired Apple devices and computer equipment.",
+        "Performed component-level repairs.",
+        "Provided customer service and case follow-up.",
+        "Managed basic inventory control."
+      ],
+      "achievements": "Repaired over 25 devices while keeping warranty returns below 10%."
+    },
+    {
+      "company": "Teleperformance - Comcast Business",
+      "position": "Bilingual Support Agent",
+      "period": "August 2022 - December 2022",
+      "description": "",
+      "responsibilities": [
+        "Provided remote support in English for small and medium-sized businesses.",
+        "Handled incidents related to internet, phone, television, and billing services."
+      ],
+      "achievements": "Resolved incidents for over 500 customers."
+    }
+  ],
+  "education": [
+    {
+      "university": "UANL | Universidad Autónoma de Nuevo León",
+      "faculty": "FIME | Facultad de Ingeniería Mecánica y Eléctrica",
+      "title": "Mechatronics Engineering",
+      "period": "August 2019 - December 2024",
+      "description": "Graduate. All coursework completed. Degree certification in progress."
+    }
+  ]
+}

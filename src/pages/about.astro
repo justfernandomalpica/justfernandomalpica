@@ -9,10 +9,12 @@ import Home from "@/icons/Home.astro";
 
 <MainLayout>
   <header>
-    <CardClickable class="home-button" href="/" target="_self">
-      <Home class="home-icon" />
-      <p>Inicio</p>
-    </CardClickable>
+    <div class="header-container">
+      <CardClickable class="home-button" href="/" target="_self">
+        <Home class="home-icon" />
+        <p>Inicio</p>
+      </CardClickable>
+    </div>
   </header>
   <main class="markdown">
     <AboutContent />
@@ -26,14 +28,15 @@ import Home from "@/icons/Home.astro";
   header,
   main {
     @include m.center-content;
-
-    max-width: 750px;
-    width: 85%;
-  }
-  header {
     margin-top: v.$outer-separation;
+  }
+
+  header {
+    .header-container {
+      width: fit-content;
+    }
     .home-button {
-      max-width: fit-content;
+      width: fit-content;
       flex-direction: row;
       gap: v.$inner-separation;
     }
@@ -41,7 +44,6 @@ import Home from "@/icons/Home.astro";
 
   main {
     margin-bottom: v.$outer-separation;
-
     display: flex;
     flex-direction: column;
     gap: v.$outer-separation;

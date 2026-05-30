@@ -7,5 +7,30 @@
   </head>
   <body>
     <slot />
+    <footer>
+      <div class="content">
+        <p>@justfernandomalpica</p>
+      </div>
+    </footer>
   </body>
 </html>
+
+<style lang="scss">
+  @use "@scss/variables.scss" as v;
+  @use "@scss/mixins.scss" as m;
+
+  footer {
+    margin-top: v.$outer-separation;
+    padding: calc(v.$outer-separation * 2) 0;
+
+    border-top: 1px rgba(#fff, 0.1) solid;
+
+    .content {
+      @include m.center-content;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+</style>

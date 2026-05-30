@@ -25,5 +25,23 @@
     "thumbnail": "inteligencias-y-escaleras.webp",
     "tags": ["Unity", "C#", "Photoshop", "FL Studio"],
     "featured": true
+  },
+  {
+    "title": "RaccoOn",
+    "link": "https://www.github.com/justfernandomalpica/RaccoOn",
+    "category": "Desarrollo web",
+    "description": "Plantilla PHP simple basada en MVC para iniciar proyectos pequeños sin cargar un framework completo.",
+    "thumbnail": "raccoon.webp",
+    "tags": ["PHP", "MVC", "SSR", "MySQL"],
+    "featured": false
+  },
+  {
+    "title": "Circuito de Chua",
+    "link": "https://fdlsm-websitecv.domcloud.dev/project?id=8",
+    "category": "Mecatrónica",
+    "description": "Módulo para Arduino UNO que permite generar señales analógicas complejas",
+    "thumbnail": "chua.webp",
+    "tags": ["Hardware", "Arduino", "LabVIEW", "Tesis"],
+    "featured": false
   }
 ]
