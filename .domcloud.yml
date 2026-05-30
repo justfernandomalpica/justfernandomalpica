@@ -1,0 +1,7 @@
+features:
+  - node 22
+nginx:
+  root: public_html/dist
+commands:
+  - npm install
+  - npm run build
